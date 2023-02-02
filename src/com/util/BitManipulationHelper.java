@@ -6,4 +6,14 @@ public class BitManipulationHelper {
     public static boolean checkIfBitIsSetInPosition(int a, int i) {
         return ((a >> i) & 1) == 1;
     }
+
+    public static int[] convertToBinary(int N, int noOfBits) {
+        int[] binary = new int[noOfBits];
+        int index = 0;
+        while(N > 0){
+            binary[index++] = N % 2;
+            N = N/2;
+        }
+        return binary;
+    }
 }

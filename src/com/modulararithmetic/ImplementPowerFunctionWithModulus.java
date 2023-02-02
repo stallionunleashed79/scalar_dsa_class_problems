@@ -11,7 +11,7 @@ public class ImplementPowerFunctionWithModulus {
     // VERY BIG VALUE AND CAUSE OVERFLOW OUTSIDE THE INTEGER / LONG RANGE AND SO WE PERFORM MODULUS AT EACH ITERATION IN FOR LOOP WITH % p TO
     // PREVENT OVERFLOW SINCE WHEN WE DO : (answer % p * a % p) % p THIS VALUE WILL ALWAYS BE IN RANGE OF [0,p-1] AND HENCE WILL
     // NOT CAUSE OVERFLOW
-    private static int power(int a, int n, int p) {
+    public static int power(int a, int n, int p) {
         int answer = 1;
         for (int i =0; i < n; i++) {
             answer = (answer % p * a % p) % p;

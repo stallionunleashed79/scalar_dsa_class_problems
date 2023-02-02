@@ -21,7 +21,7 @@ public class FindTwoPowerN {
 
     // TC = 0(1), SC = O(1) using bit wise left shift operator (NOTE: Left shift operator only works for 2^N or in other words powers of 2)
     private static int findTwoPowerNOptimized(int N) {
-        return 1<<N;
+        return 1 << N;
     }
 
     // TC = 0(N), SC = O(1) using regular multiplication: NOTE: Here we cannot use left shift operator since left shift operator only
