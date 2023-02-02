@@ -7,6 +7,7 @@ public class SortStringOfCharactersInDictionaryOrder {
         System.out.println("SORT STRING IN DICTIONARY ORDER "+ sortInDictionaryOrderWithoutSortingAlgorithm("dabaedb"));
     }
 
+    // TC = O(N) and SC = O(1), constant we using a count array of size 26
     private static String sortInDictionaryOrderWithoutSortingAlgorithm(final String input) {
         int hash[] = new int[26];
         StringBuilder str = new StringBuilder();
