@@ -12,7 +12,7 @@ import com.util.StringUtils;
 public class ReverseSentenceWordByWord {
 
     public static void main(String[] args) {
-        System.out.println("REVERSE SENTENCE WORD BY WORD "+reverseSentenceWordByWord("here is a boy"));
+        System.out.println("REVERSE SENTENCE WORD BY WORD " + reverseSentenceWordByWord("here is a boy"));
     }
 
     // 2 STEP APPROACH:
@@ -20,13 +20,17 @@ public class ReverseSentenceWordByWord {
     //2-B) REVERSE EACH WORD OF SENTENCE THAT ARE SEPARATED BY SPACE
     private static String reverseSentenceWordByWord(String input) {
         input = StringUtils.reversePartOfString(input, 0, input.length() - 1);
-        int left = 0, right = 0;
-        while (left < input.length() && right < input.length()) {
-            if (input.charAt(right) == ' ') {
-                input = StringUtils.reversePartOfString(input, left, right-1);
+        int left = 0, right = 1;
+        while (right < input.length()) {
+            while (input.charAt(right) != ' ') {
+                right++;
+                if (right >= input.length()) {
+                    break;
+                }
             }
+            input = StringUtils.reversePartOfString(input, left, right - 1);
             left = right + 1;
-            right++;
+            right = left + 1;
         }
         return input;
     }
