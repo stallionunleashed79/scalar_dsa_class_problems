@@ -10,6 +10,7 @@ public class FindFrequencyOfNumbers {
         System.out.println("QUERY FREQUENCY MAP "+buildQueryFrequencyMap(List.of(2, 6, 3, 8, 2, 8, 2, 3, 8), List.of(2, 8, 3, 5)));
     }
 
+    // TC is O(N + Q) due to 2 for loops where N is size of input and Q is size of query array, SC = O(N) for extra hash maps
     private static Map<Integer, Integer> buildQueryFrequencyMap(final List<Integer> input, final List<Integer> queries) {
         final Map<Integer, Integer> inputFrequencyMap = new HashMap<>();
         final Map<Integer, Integer> queryFrequencyMap = new HashMap<>();
