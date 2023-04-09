@@ -1,9 +1,12 @@
 package com.hashing;
 
+import com.util.CollectionUtils;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// GIVEN ARRAY OF N ELEMENTS, RETURN THE FREQUENCY OF NUMBERS IN ARRAY
 public class FindFrequencyOfNumbers {
 
     public static void main(String[] args) {
@@ -12,12 +15,8 @@ public class FindFrequencyOfNumbers {
 
     // TC is O(N + Q) due to 2 for loops where N is size of input and Q is size of query array, SC = O(N) for extra hash maps
     private static Map<Integer, Integer> buildQueryFrequencyMap(final List<Integer> input, final List<Integer> queries) {
-        final Map<Integer, Integer> inputFrequencyMap = new HashMap<>();
         final Map<Integer, Integer> queryFrequencyMap = new HashMap<>();
-        for (Integer element: input) {
-            inputFrequencyMap.put(element, !inputFrequencyMap.containsKey(element) ? 1 : inputFrequencyMap.get(element) + 1);
-        }
-
+        final Map<Integer, Integer> inputFrequencyMap = CollectionUtils.buildFrequencyMap(input);
         for (Integer element: queries) {
             queryFrequencyMap.put(element, inputFrequencyMap.getOrDefault(element, 0));
         }
