@@ -14,7 +14,7 @@ public class CheckIfExistsSubArrayWithSumZero {
         System.out.println("DOES EXIST A ZERO SUM SUBARRAY FOR "+doesExistZeroSumSubArray(List.of(6, 6, 1, -3, 4, 3, 1, -2, -3, 2)));
     }
 
-    // TC = O(N) and SC = O(N), BUILD A PREFIX SUM ARRAY FOR GIVEN ARRAY AND CHECK IF THERE ARE DUPLICATES IN
+    // TC = O(N) and SC = O(N) FOR PREFIX SUM ARRAY, BUILD A PREFIX SUM ARRAY FOR GIVEN ARRAY AND CHECK IF THERE ARE DUPLICATES IN
     // PF SUM ARRAY SINCE IF A SUB ARRAY SUM IS 0, THEN ITS PF SUM ARRAY WILL HAVE DUPLICATES
     private static boolean doesExistZeroSumSubArray(final List<Integer> input) {
         final List<Integer> prefixSumArray = ArrayUtils.buildPrefixSumArray(input);
