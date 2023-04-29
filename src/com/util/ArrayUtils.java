@@ -1,0 +1,16 @@
+package com.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayUtils {
+
+    public static List<Integer> buildPrefixSumArray(final List<Integer> input) {
+        final List<Integer> prefixSumArray = new ArrayList<>();
+        prefixSumArray.add(input.get(0));
+        for (int i =1; i < input.size(); i++) {
+            prefixSumArray.add(Integer.sum(input.get(i), prefixSumArray.get(i-1)));
+        }
+        return prefixSumArray;
+    }
+}
