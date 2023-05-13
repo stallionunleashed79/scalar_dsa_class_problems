@@ -10,6 +10,7 @@ public class TwoSumProblemBruteForceSolution {
         System.out.println("DOES EXIST A PAIR WITH SUM K "+ doesAPairExistWithSumEqualsKBruteForce(List.of( 2, 4, -3, 7 ), 5));
     }
     // TC = O(N^2) since there are 2 for loops with N iterations each and SC = O(1)
+    // NO OF ITERATIONS :- N * (N-1) / 2 :- (N-1) + (N-2) + (N-3) + ........+1 + 0 = (N-1) * N / 2
     private static boolean doesAPairExistWithSumEqualsKBruteForce(final List<Integer> input, final Integer K) {
         for (int i =0; i < input.size(); i++) {
             for (int j = i +1; j < input.size(); j++) {
