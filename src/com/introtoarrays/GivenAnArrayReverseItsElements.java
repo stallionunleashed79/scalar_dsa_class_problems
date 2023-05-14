@@ -1,5 +1,7 @@
 package com.introtoarrays;
 
+import com.util.ArrayUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,26 +9,16 @@ import java.util.List;
 public class GivenAnArrayReverseItsElements {
 
     public static void main(String[] args) {
-        System.out.println("ARRAY SWAPPED "+ reverseArray(new ArrayList<>(List.of(-1, 4, 7, 6, -2, 7, 8, 10))));
-        System.out.println("PART OF ARRAY SWAPPED "+ reversePartOfArray(new ArrayList<>(List.of(-1, 4, 7, 6, -2, 7, 8, 10)),
-                2, 4));
+        final List<Integer> input1 = new ArrayList<>(List.of(-1, 4, 7, 6, -2, 7, 8, 10));
+        final List<Integer> input2 = new ArrayList<>(List.of(-1, 4, 7, 6, -2, 7, 8, 10));
+        reverseArray(input1);
+        ArrayUtils.reversePartOfArray(input2, 2, 4);
+        System.out.println("FIRST ARRAY REVERSED "+ input1);
+        System.out.println("SECOND ARRAY REVERSED "+ input2);
     }
     // TC = O(N) and SC = O(1) since no extra space
-    private static List<Integer> reverseArray(final List<Integer> input) {
-        for (int i =0, j = input.size() - 1; i <= j; i++, j--) {
-            Integer temp = input.get(i);
-            input.set(i, input.get(j));
-            input.set(j, temp);
-        }
-        return input;
+    private static void reverseArray(final List<Integer> input) {
+        ArrayUtils.reversePartOfArray(input, 0, input.size()-1);
     }
 
-    private static List<Integer> reversePartOfArray(final List<Integer> input, final int startIndex, final int endIndex) {
-        for (int i =startIndex, j = endIndex; i <= j; i++, j--) {
-            Integer temp = input.get(i);
-            input.set(i, input.get(j));
-            input.set(j, temp);
-        }
-        return input;
-    }
 }

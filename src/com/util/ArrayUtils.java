@@ -13,4 +13,12 @@ public class ArrayUtils {
         }
         return prefixSumArray;
     }
+
+    public static void reversePartOfArray(final List<Integer> input, final int startIndex, final int endIndex) {
+        for (int i =startIndex, j = endIndex; i <= j; i++, j--) {
+            Integer temp = input.get(i);
+            input.set(i, input.get(j));
+            input.set(j, temp);
+        }
+    }
 }
