@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ArrayUtils {
 
+    // TC = O(N) and SC = O(N) due to the new PFSum array
     public static List<Integer> buildPrefixSumArray(final List<Integer> input) {
         final List<Integer> prefixSumArray = new ArrayList<>();
         prefixSumArray.add(input.get(0));
