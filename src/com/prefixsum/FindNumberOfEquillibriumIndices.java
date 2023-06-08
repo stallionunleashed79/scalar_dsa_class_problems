@@ -14,6 +14,7 @@ public class FindNumberOfEquillibriumIndices {
         System.out.println("NO OF EQUILLIBRIUM INDICES "+getNumberOfEquillibriumIndices(List.of(-7, -1, 5, 2, -4, 3, 0)));
     }
 
+    // TC = O(N) TO LOOP THROUGH FOR LOOP AND SC = O(N) FOR EXTRA PREFIX SUM ARRAY
     private static int getNumberOfEquillibriumIndices(final List<Integer> input) {
         int count = 0;
         final List<Integer> pfSumArray = ArrayUtils.buildPrefixSumArray(input);
