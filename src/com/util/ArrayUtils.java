@@ -30,7 +30,11 @@ public class ArrayUtils {
         final List<Integer> prefixSumArray = new ArrayList<>();
         prefixSumArray.add(input.get(0));
         for (int i =1; i < input.size(); i++) {
-            prefixSumArray.add(Integer.sum(i % 2 != 0 ? input.get(i) : 0, prefixSumArray.get(i-1)));
+            if (i % 2 == 1) {
+                prefixSumArray.add(Integer.sum(input.get(i), prefixSumArray.get(i-1)));
+            } else {
+                prefixSumArray.add(prefixSumArray.get(i-1));
+            }
         }
         return prefixSumArray;
     }
