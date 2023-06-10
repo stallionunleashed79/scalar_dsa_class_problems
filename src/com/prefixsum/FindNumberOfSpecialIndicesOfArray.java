@@ -18,10 +18,10 @@ public class FindNumberOfSpecialIndicesOfArray {
         int count = 0;
         for (int i = 0; i < input.size(); i++) {
             int pfOddSumAfterRemoval = i == 0
-                    ? pfEvenSum.get(input.size()-1) - input.get(0)
+                    ? pfEvenSum.get(input.size()-1) - pfEvenSum.get(0)
                     : pfOddSum.get(i-1) + (pfEvenSum.get(input.size()-1) - pfEvenSum.get(i));
             int pfEvenSumAfterRemoval = i == 0
-                    ? pfOddSum.get(input.size()-1) - input.get(0)
+                    ? pfOddSum.get(input.size()-1) - pfOddSum.get(0)
                     : pfEvenSum.get(i-1) + (pfOddSum.get(input.size()-1) - pfOddSum.get(i));
             if (pfEvenSumAfterRemoval == pfOddSumAfterRemoval) {
                 count++;
