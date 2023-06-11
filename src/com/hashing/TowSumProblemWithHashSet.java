@@ -9,11 +9,13 @@ import java.util.List;
 public class TowSumProblemWithHashSet {
 
     public static void main(String[] args) {
-        System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairOfValuesSummingToK(
+        System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairOfValuesSummingToKOptimized(
                 List.of( 8, 9, 1, -2, 4, 5, 11, -6, 7, 5 ), 11)));
+        System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairOfValuesSummingToKOptimized(
+                List.of( 8, 9, 1, -2, 4, 5, 11, -6, 7, 5 ), 22)));
     }
     // TC = O(N) and SC = O(N) for the extra hashset
-    private static Integer[] getFirstPairOfValuesSummingToK(final List<Integer> input, final Integer K) {
+    private static Integer[] getFirstPairOfValuesSummingToKOptimized(final List<Integer> input, final Integer K) {
         final HashSet<Integer> hashSet = new HashSet<>();
         for(Integer element: input) {
             final Integer remaining = K - element;
