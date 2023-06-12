@@ -10,15 +10,19 @@ public class CountPossiblePairsInGivenArray {
         System.out.println("COUNT NUMBER OF 'AG' PAIRS IN ARRAY "+ countNumberOfPairsBruteForce(
                 new char[]{ 'b', 'a', 'a', 'g', 'd', 'c', 'a', 'g' }));
     }
+    // TC = O(N^2) and SC = O(1)
     private static int countNumberOfPairsBruteForce(final char[] input) {
         int count = 0;
         for (int i = 0; i < input.length; i++) {
-                for (int j = i+1; j < input.length; j++) {
-                    if (input[i] == 'a' && input[j] == 'g') {
-                        count++;
-                    }
+            if (input[i] != 'a') {
+                continue;
+            }
+            for (int j = i+1; j < input.length; j++) {
+                if (input[j] == 'g') {
+                    count++;
                 }
             }
+        }
         return count;
     }
 }
