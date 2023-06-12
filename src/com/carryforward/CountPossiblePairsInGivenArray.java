@@ -1,7 +1,5 @@
 package com.carryforward;
 
-import java.util.Arrays;
-
 // GIVEN AN ARRAY OF SIZE N AND INDICES (I, J) SUCH THAT I < J COUNT NUMBER OF PAIRS SUCH THAT
 // ARR[I] = 'a' AND ARR[J] = 'g'
 public class CountPossiblePairsInGivenArray {
