@@ -7,8 +7,12 @@ public class CountPossiblePairsInGivenArray {
     public static void main(String[] args) {
         System.out.println("COUNT NUMBER OF 'AG' PAIRS IN ARRAY "+ countNumberOfPairsBruteForce(
                 new char[]{ 'b', 'a', 'a', 'g', 'd', 'c', 'a', 'g' }));
+        System.out.println("COUNT NUMBER OF 'AG' PAIRS IN ARRAY "+ countNumberOfPairsOptimized(
+                new char[]{ 'b', 'a', 'a', 'g', 'd', 'c', 'a', 'g' }));
+        System.out.println("COUNT NUMBER OF 'AG' PAIRS IN ARRAY "+ countNumberOfPairsOptimized(
+                new char[]{ 'a', 'd', 'g', 'a', 'g', 'a', 'g', 'f', 'g' }));
     }
-    // TC = O(N^2) and SC = O(1)
+    // TC = O(N^2) and SC = O(1) since no extra space is used
     private static int countNumberOfPairsBruteForce(final char[] input) {
         int count = 0;
         for (int i = 0; i < input.length; i++) {
@@ -22,5 +26,19 @@ public class CountPossiblePairsInGivenArray {
             }
         }
         return count;
+    }
+
+    // TC = O(N) and SC = O(1)
+    private static int countNumberOfPairsOptimized(final char[] input) {
+        int answer = 0;
+        int gCount = 0;
+        for (int i = input.length-1; i >=0 ; i--) {
+            if (input[i] == 'g') {
+                gCount++;
+            } else if (input[i] == 'a') {
+                answer = answer + gCount;
+            }
+        }
+        return answer;
     }
 }
