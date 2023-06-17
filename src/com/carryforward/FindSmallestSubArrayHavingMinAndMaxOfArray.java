@@ -9,6 +9,8 @@ public class FindSmallestSubArrayHavingMinAndMaxOfArray {
     public static void main(String[] args) {
         System.out.println("MIN SUB ARRAY LENGTH CONTAINING MIN AND MAX ELEMENTS "+
                 getSmallestSubarrayLengthHavingMinAndMaxOptimized(List.of( 1, 2, 3, 1, 3, 4, 6, 4, 6, 3 )));
+        System.out.println("MIN SUB ARRAY LENGTH CONTAINING MIN AND MAX ELEMENTS "+
+                getSmallestSubarrayLengthHavingMinAndMaxOptimized(List.of( 2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 1 )));
     }
 
     // TC = O(N) DUE TO A SINGLE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE NEEDED
@@ -35,7 +37,7 @@ public class FindSmallestSubArrayHavingMinAndMaxOfArray {
                 minElementIndex = i;
             }
             if (maxElementIndex != -1 && minElementIndex != -1) {
-                minSubArrayLength = Math.min(minSubArrayLength, Math.abs(maxElementIndex - minElementIndex + 1));
+                minSubArrayLength = Math.min(minSubArrayLength, Math.abs(maxElementIndex - minElementIndex) + 1);
             }
         }
         return minSubArrayLength;
