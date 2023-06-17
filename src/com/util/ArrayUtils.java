@@ -44,6 +44,21 @@ public class ArrayUtils {
         return prefixSumArray;
     }
 
+    public static Integer[] findMinAndMaxOfGivenArray(final List<Integer> input) {
+        int maxElement = Integer.MIN_VALUE, minElement = Integer.MAX_VALUE;
+        // FIRST FIND MAX AND MIN ELEMENT OF ARRAY
+        int N = input.size();
+        for (int i = 0; i < N; i++) {
+            final Integer currentElement = input.get(i);
+            if (currentElement.compareTo(maxElement) > 0) {
+                maxElement = currentElement;
+            } else if (currentElement.compareTo(minElement) < 0) {
+                minElement = currentElement;
+            }
+        }
+        return new Integer[]{ minElement, maxElement };
+    }
+
     public static void reversePartOfArray(final List<Integer> input, final int startIndex, final int endIndex) {
         for (int i =startIndex, j = endIndex; i <= j; i++, j--) {
             Integer temp = input.get(i);
