@@ -12,6 +12,7 @@ public class FindAllLeadersInAnArray {
         System.out.println("NO OF LEADERS IN ARRAY "+ getNumberOfLeadersInTheArray(List.of( 10, 7, 9, 3, 2, 4, 5 )));
     }
 
+    // TC = O(N) due to just a simple for loop and SC = O(1) since no extra space needed
     private static int getNumberOfLeadersInTheArray(final List<Integer> input) {
         int count = 1;
         int N = input.size();
