@@ -24,7 +24,7 @@ public class FindMinNoOfOperationsToTurnOnAllBulbs {
             if (input.get(i).compareTo(0) == 0) {
                 minNumberOfOperations++;
                 for (int j = i; j < input.size(); j++) {
-                    input.set(j, input.get(j).compareTo(0) == 0 ? 1 : 0);
+                    input.set(j, 1 - input.get(j));
                 }
             }
         }
