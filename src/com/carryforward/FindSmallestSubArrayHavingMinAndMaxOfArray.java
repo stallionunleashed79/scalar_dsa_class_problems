@@ -21,6 +21,10 @@ public class FindSmallestSubArrayHavingMinAndMaxOfArray {
                 getSmallestSubarrayLengthHavingMinAndMaxOptimized(List.of( 2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 3, 4, 1 )));
         System.out.println("MIN SUB ARRAY LENGTH CONTAINING MIN AND MAX ELEMENTS "+
                 getSmallestSubarrayLengthHavingMinAndMaxBruteForce(List.of( 2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 3, 4, 1 )));
+        System.out.println("MIN SUB ARRAY LENGTH CONTAINING MIN AND MAX ELEMENTS "+
+                getSmallestSubarrayLengthHavingMinAndMaxOptimized(List.of( 8, 3, 8, 7, 3, 1, 2, 8 )));
+        System.out.println("MIN SUB ARRAY LENGTH CONTAINING MIN AND MAX ELEMENTS "+
+                getSmallestSubarrayLengthHavingMinAndMaxBruteForce(List.of( 8, 3, 8, 7, 3, 1, 2, 8 )));
     }
 
     // TC = O(N^2) DUE TO 2 NESTED FOR LOOPS AND SC = O(1) SINCE NO EXTRA SPACE NEEDED
