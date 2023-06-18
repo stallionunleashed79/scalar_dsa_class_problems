@@ -14,6 +14,7 @@ public class FindMinNoOfOperationsToTurnOnAllBulbs {
 
     public static void main(String[] args) {
         System.out.println("MINIMUM NUMBER OF OPERATIONS "+ minNumberOfOperationsToTurnOnAllBulbsBruteForce(Arrays.asList(1, 1, 0, 1, 0, 0, 1)));
+        System.out.println("MINIMUM NUMBER OF OPERATIONS "+ minNumberOfOperationsToTurnOnAllBulbsOptimized(Arrays.asList(1, 1, 0, 1, 0, 0, 1)));
     }
 
     // TC = O(N^2) due to 2 nested for loops and SC = O(1) since no extra space needed
@@ -26,6 +27,24 @@ public class FindMinNoOfOperationsToTurnOnAllBulbs {
                 for (int j = i; j < input.size(); j++) {
                     input.set(j, 1 - input.get(j));
                 }
+            }
+        }
+        return minNumberOfOperations;
+    }
+
+    // TC = O(N) due to single for loop and SC = O(1) since no extra space needed
+    private static int minNumberOfOperationsToTurnOnAllBulbsOptimized(final List<Integer> input) {
+        int minNumberOfOperations = 0;
+        int N = input.size();
+        for (int i = 0; i < N; i++) {
+            Integer state;
+            if (minNumberOfOperations % 2 != 0) {
+                state = 1 - input.get(i);
+            } else {
+                state = input.get(i);
+            }
+            if (state.compareTo(0) == 0) {
+                minNumberOfOperations++;
             }
         }
         return minNumberOfOperations;
