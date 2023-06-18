@@ -9,6 +9,7 @@ public class FindTotalNumberOFSubArraysForArray {
         System.out.println("NUMBER OF SUBARRAYS FOR ARRAY IS "+ findNumberOfSubArraysForArray(List.of( -1, 2, 4, 5 )));
     }
 
+    // TC = O(1) and SC = O(1)
     private static int findNumberOfSubArraysForArray(final List<Integer> input) {
         int N = input.size();
         return (N * (N+1)) / 2;
