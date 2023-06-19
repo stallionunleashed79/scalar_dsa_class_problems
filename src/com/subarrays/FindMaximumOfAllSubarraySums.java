@@ -10,6 +10,7 @@ public class FindMaximumOfAllSubarraySums {
                 List.of( 7, 3, 2, -1, 6, 8, 2, 3 )));
     }
 
+    // TC = O(N^2) and SC = O(1) due to no extra space needed
     private static int findMaximumOfAllSubarraySumsOptimizedUsingCarryForward(final List<Integer> input) {
         int N = input.size();
         int maxSubArraySum = Integer.MIN_VALUE;
