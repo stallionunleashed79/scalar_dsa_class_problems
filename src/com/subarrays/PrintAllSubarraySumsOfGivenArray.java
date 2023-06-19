@@ -19,7 +19,7 @@ public class PrintAllSubarraySumsOfGivenArray {
         System.out.println("PRINTING ALL SUB-ARRAY STARTING AT SPECIFIC INDEX USING PREFIX SUM TECHNIQUE -------");
         printAllSubarraySumsStartingAtAnIndexOptimized(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
         System.out.println("PRINTING ALL SUB-ARRAY STARTING AT SPECIFIC INDEX USING CARRY FORWARD TECHNIQUE -------");
-        printAllSubarraySumsStartingAtAnIndexOptimizedWithNoExtraSpace(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
+        printAllSubarraySumsStartingAtAnIndexOptimizedUsingCarryForward(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 0);
     }
 
     // TC = O(N^3) and SC = O(1)
@@ -68,7 +68,7 @@ public class PrintAllSubarraySumsOfGivenArray {
     }
 
     // TC = O(N) DUE TO SINGLE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE NEEDED
-    private static void printAllSubarraySumsStartingAtAnIndexOptimizedWithNoExtraSpace(final List<Integer> input, final int startIndex) {
+    private static void printAllSubarraySumsStartingAtAnIndexOptimizedUsingCarryForward(final List<Integer> input, final int startIndex) {
         int N = input.size();
         int sum = 0;
         for (int j =startIndex; j < N; j++) {
