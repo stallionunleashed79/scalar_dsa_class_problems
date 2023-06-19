@@ -28,7 +28,7 @@ public class PrintAllSubarraySumsOfGivenArray {
         }
     }
 
-    // TC = O(N^2) USING PREFIX SUM and SC = O(1)
+    // TC = O(N^2) USING PREFIX SUM AND SC = O(N) FOR THE PREFIX SUM ARRAY
     private static void printAllSubarraySumsOfArrayOptimized(final List<Integer> input) {
         int N = input.size();
         final List<Integer> prefixSumArray = ArrayUtils.buildPrefixSumArray(input);
