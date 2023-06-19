@@ -27,8 +27,9 @@ public class BuyAndSellStock {
         int min=Integer.MAX_VALUE,pro=0;
         for(int i:prices)
         {
-            if(i<min)
-                min=i;
+            if(i<min) {
+                min = i;
+            }
             pro = Math.max(pro,i-min);
         }
         return pro;
