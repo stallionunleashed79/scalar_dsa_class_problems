@@ -10,6 +10,7 @@ public class PrintAllSubArraysOfAnArray {
         printAllSubarraysOfArray(List.of( -1, 3, 5, 6, 8 ));
     }
 
+    // TC = O(N^3) and SC = O(1)
     private static void printAllSubarraysOfArray(final List<Integer> input) {
         int N = input.size();
         for (int i=0; i < N; i++) {
