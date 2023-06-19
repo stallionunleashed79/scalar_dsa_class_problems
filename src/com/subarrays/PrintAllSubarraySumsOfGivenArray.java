@@ -14,6 +14,8 @@ public class PrintAllSubarraySumsOfGivenArray {
         printAllSubarraySumsOfArrayOptimized(List.of( -1, 3, 5, 6, 8 ));
         System.out.println("PRINTING ALL SUB-ARRAY SUMS STARTING AT SPECIFIC INDEX USING PREFIX SUM -------");
         printAllSubarraySumsOfArrayStartingAtIndexOptimized(List.of( -1, 3, 5, 6, 8 ), 2);
+        System.out.println("NEXT DATA SET");
+        printAllSubarraySumsOfArrayStartingAtIndexOptimized(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
     }
 
     // TC = O(N^3) and SC = O(1)
