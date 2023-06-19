@@ -12,10 +12,12 @@ public class PrintAllSubarraySumsOfGivenArray {
         printAllSubarraySumsOfArrayBruteForce(List.of( -1, 3, 5, 6, 8 ));
         System.out.println("PRINTING ALL SUB-ARRAY SUMS USING PREFIX SUM --------");
         printAllSubarraySumsOfArrayOptimized(List.of( -1, 3, 5, 6, 8 ));
-        System.out.println("PRINTING ALL SUB-ARRAY SUMS STARTING AT SPECIFIC INDEX USING PREFIX SUM -------");
+        System.out.println("PRINTING ALL SUB-ARRAY SUMS FROM A SPECIFIC INDEX USING PREFIX SUM -------");
         printAllSubarraySumsOfArrayFromAnIndexOptimized(List.of( -1, 3, 5, 6, 8 ), 2);
-        System.out.println("NEXT DATA SET");
+        System.out.println("/n/n/n");
         printAllSubarraySumsOfArrayFromAnIndexOptimized(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
+        System.out.println("PRINTING ALL SUB-ARRAY STARTING AT SPECIFIC INDEX USING PREFIX SUM -------");
+        printAllSubarraySumsStartingAtAnIndexOptimized(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
     }
 
     // TC = O(N^3) and SC = O(1)
@@ -51,6 +53,15 @@ public class PrintAllSubarraySumsOfGivenArray {
             for (int j =i; j < N; j++) {
                 System.out.println(i == 0 ? prefixSumArray.get(j) : prefixSumArray.get(j) - prefixSumArray.get(i-1));
             }
+        }
+    }
+
+    // TC = O(N) USING PREFIX SUM AND SC = O(N) FOR THE PREFIX SUM ARRAY
+    private static void printAllSubarraySumsStartingAtAnIndexOptimized(final List<Integer> input, final int startIndex) {
+        int N = input.size();
+        final List<Integer> prefixSumArray = ArrayUtils.buildPrefixSumArray(input);
+        for (int j =startIndex; j < N; j++) {
+            System.out.println(prefixSumArray.get(j) - prefixSumArray.get(startIndex-1));
         }
     }
 }
