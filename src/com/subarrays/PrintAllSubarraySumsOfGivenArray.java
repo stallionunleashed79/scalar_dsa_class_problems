@@ -16,10 +16,12 @@ public class PrintAllSubarraySumsOfGivenArray {
         printAllSubarraySumsOfArrayFromAnIndexOptimized(List.of( -1, 3, 5, 6, 8 ), 2);
         System.out.println("/n/n/n");
         printAllSubarraySumsOfArrayFromAnIndexOptimized(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
-        System.out.println("PRINTING ALL SUB-ARRAY STARTING AT SPECIFIC INDEX USING PREFIX SUM TECHNIQUE -------");
+        System.out.println("PRINTING ALL SUB-ARRAY SUMS STARTING AT SPECIFIC INDEX USING PREFIX SUM TECHNIQUE -------");
         printAllSubarraySumsStartingAtAnIndexOptimized(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 2);
-        System.out.println("PRINTING ALL SUB-ARRAY STARTING AT SPECIFIC INDEX USING CARRY FORWARD TECHNIQUE -------");
+        System.out.println("PRINTING ALL SUB-ARRAY SUMS STARTING AT SPECIFIC INDEX USING CARRY FORWARD TECHNIQUE -------");
         printAllSubarraySumsStartingAtAnIndexOptimizedUsingCarryForward(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 0);
+        System.out.println("PRINTING ALL SUB-ARRAY SUMS USING CARRY FORWARD TECHNIQUE -------");
+        printAllSubarraySumsOptimizedUsingCarryForward(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ));
     }
 
     // TC = O(N^3) and SC = O(1)
@@ -74,6 +76,18 @@ public class PrintAllSubarraySumsOfGivenArray {
         for (int j =startIndex; j < N; j++) {
             sum = sum + input.get(j);
             System.out.println(sum);
+        }
+    }
+
+    // TC = O(N) DUE TO SINGLE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE NEEDED
+    private static void printAllSubarraySumsOptimizedUsingCarryForward(final List<Integer> input) {
+        int N = input.size();
+        for (int i =0; i < N; i++) {
+            int sum = 0;
+            for (int j = i; j < N; j++) {
+                sum = sum + input.get(j);
+                System.out.println(sum);
+            }
         }
     }
 }
