@@ -8,10 +8,22 @@ package com.introtoarrays;
 public class BuyAndSellStock {
 
     public static void main(String[] args) {
-        System.out.println("MAX PROFIT FOR ALL DAYS "+ maxProfit(new int[]{ 7,1,5,3,6,4 }));
+        System.out.println("MAX PROFIT FOR ALL DAYS "+ maxProfitBruteForce(new int[]{ 7,1,5,3,6,4 }));
+        System.out.println("MAX PROFIT FOR ALL DAYS "+ maxProfitOptimized(new int[]{ 7,1,5,3,6,4 }));
+    }
+
+    // TC = O(N^2) DUE TO 2 NESTED FOR LOOPS AND SC = O(1) DUE TO NO EXTRA SPACE USED
+    private static int maxProfitBruteForce(int[] prices) {
+        int answer=Integer.MIN_VALUE;
+        for(int i = 0; i < prices.length; i++) {
+            for (int j = i+1; j < prices.length; j++) {
+                answer = Math.max(answer, prices[j] - prices[i]);
+            }
+        }
+        return answer;
     }
     // TC = O(N) DUE TO SINGLE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE USED
-    private static int maxProfit(int[] prices) {
+    private static int maxProfitOptimized(int[] prices) {
         int min=Integer.MAX_VALUE,pro=0;
         for(int i:prices)
         {
