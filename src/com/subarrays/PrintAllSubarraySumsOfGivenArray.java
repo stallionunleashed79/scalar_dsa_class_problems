@@ -79,7 +79,7 @@ public class PrintAllSubarraySumsOfGivenArray {
         }
     }
 
-    // TC = O(N) DUE TO SINGLE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE NEEDED
+    // TC = O(N^2) DUE TO SINGLE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE NEEDED
     private static void printAllSubarraySumsOptimizedUsingCarryForward(final List<Integer> input) {
         int N = input.size();
         for (int i =0; i < N; i++) {
