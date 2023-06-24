@@ -9,6 +9,7 @@ public class GivenA2DMatrixPrintRowWiseSum {
         System.out.println("PRINT ROW WISE SUM FOR ");
         printRowWiseSum(List.of(List.of( 3, 8, 9, 2 ), List.of( 1, 2, 3, 6 ), List.of( 4, 10, 11, 17 )));
     }
+    // TC = O(N*M) WHERE N IS NUMBER OF ROWS AND M IS NUMBER OF COLUMNS AND SC = O(1) SINCE NO EXTRA SPACE USED
     private static void printRowWiseSum(final List<List<Integer>> input) {
         for (int i = 0; i < input.size(); i++) {
             int sum = 0;
