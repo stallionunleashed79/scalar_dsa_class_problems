@@ -6,7 +6,7 @@ import java.util.List;
 public class Given2DMatrixFindMaxColumnSum {
 
     public static void main(String[] args) {
-        System.out.println("MAX COLUMN SUM IS "+getMaxColumnSum(List.of(List.of( 3, 8, 9, 2 ), List.of( 1, 2, 3, 6 ), List.of( 4, 10, 11, 17 ))));
+        System.out.println("MAX COLUMN SUM IS "+getMaxColumnSum(List.of(List.of( 3, 8, 9, 2 ), List.of( 1, 2, 3, 6 ), List.of( 4, 10, 11, 18 ))));
     }
 
     // TC IS O(N*M) WHERE N IS NUMBER OF ROWS AND M IS NUMBER OF COLUMNS AND SC = O(1) SINCE NO EXTRA SPACE USED
