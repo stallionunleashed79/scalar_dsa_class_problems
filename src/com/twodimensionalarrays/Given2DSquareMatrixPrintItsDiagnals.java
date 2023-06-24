@@ -9,6 +9,7 @@ public class Given2DSquareMatrixPrintItsDiagnals {
         printDiagonalsOfSquareMatrix(List.of(List.of( 3, 8, 9, 2 ), List.of( 1, 2, 3, 6 ), List.of( 4, 10, 11, 18 ), List.of( 7, 4, 5, 2 )));
     }
 
+    // TC = O(N) WHERE N IS THE SIZE OF THE ARRAY AND SC = O(1) SINCE NO EXTRA SPACE USED
     private static void printDiagonalsOfSquareMatrix(final List<List<Integer>> input) {
         // PRINTING DIAGONAL ELEMENTS FROM LEFT TO RIGHT (L-> R)
         System.out.println("PRINTING DIAGONAL ELEMENTS FROM LEFT TO RIGHT (L-> R)");
