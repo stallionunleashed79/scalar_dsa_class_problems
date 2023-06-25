@@ -16,7 +16,7 @@ public class ThreeSumProblemOptimizedSolution {
         triplets.forEach(array -> System.out.println(Arrays.toString(array)));
     }
 
-    // TC = O(N^2) -> (O(N^2) + O(NLOGN) AND SC = O(N) DUE TO THE LIST CREATED TO HOLD THE RESULT (SOLUTION DERIVED FROM ALGO-EXPERT)
+    // TC = O(N^2) -> (O(N^2) + O(NLOGN) TO SORT THE ARRAY AND SC = O(N) DUE TO THE LIST CREATED TO HOLD THE RESULT (SOLUTION DERIVED FROM ALGO-EXPERT)
     private static List<Integer[]> threeSumProblemOptimized(final Integer[] array, final int targetSum) {
         final List<Integer[]> result = new ArrayList<>();
         Arrays.sort(array); // TC = O(NLOGN)
