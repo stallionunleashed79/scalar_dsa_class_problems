@@ -67,7 +67,7 @@ public class ArrayUtils {
         }
     }
 
-    public static List<List<Integer>> getTransposeOfListOfLists(final List<List<Integer>> input) {
+    public static List<List<Integer>> getTransposeOf2DSquareMatrix(final List<List<Integer>> input) {
         for (int i=0;i < input.size();i++) {
             for (int j = i+1; j < input.get(0).size(); j++) {
                 Integer temp = input.get(i).get(j);
@@ -76,5 +76,17 @@ public class ArrayUtils {
             }
         }
         return input;
+    }
+
+    public static List<List<Integer>> getTransposeOf2DRectangularMatrix(final List<List<Integer>> input) {
+        final List<List<Integer>> transposedMatrix = new ArrayList<>();
+        for (int j=0;j < input.get(0).size();j++) {
+            final List<Integer> row = new ArrayList<>();
+            for (int i = 0; i < input.size(); i++) {
+                row.add(input.get(i).get(j));
+            }
+            transposedMatrix.add(row);
+        }
+        return transposedMatrix;
     }
 }
