@@ -66,4 +66,15 @@ public class ArrayUtils {
             input.set(j, temp);
         }
     }
+
+    public static List<List<Integer>> getTransposeOfListOfLists(final List<List<Integer>> input) {
+        for (int i=0;i < input.size();i++) {
+            for (int j = i+1; j < input.get(0).size(); j++) {
+                Integer temp = input.get(i).get(j);
+                input.get(i).set(j, input.get(j).get(i));
+                input.get(j).set(i, temp);
+            }
+        }
+        return input;
+    }
 }
