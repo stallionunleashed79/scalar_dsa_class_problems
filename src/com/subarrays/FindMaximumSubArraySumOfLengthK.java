@@ -29,7 +29,7 @@ public class FindMaximumSubArraySumOfLengthK {
         }
         return maxSum;
     }
-    // TC = O(N) AND SC = O(N) DUE TO EXTRA PREFIX SUM ARRAY USED
+    // TC = O(2N-K) WHICH IS O(N + N-K) AND SC = O(N) DUE TO EXTRA PREFIX SUM ARRAY USED
     private static int getMaxSubArraySumOfSizeKForArrayOptimizedWithPrefixSumArray(final List<Integer> input, final Integer K) {
         final List<Integer> prefixSumArray = ArrayUtils.buildPrefixSumArray(input);
         int N = input.size();
