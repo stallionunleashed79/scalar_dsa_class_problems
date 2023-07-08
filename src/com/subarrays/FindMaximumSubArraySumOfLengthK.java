@@ -12,7 +12,7 @@ public class FindMaximumSubArraySumOfLengthK {
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED " + getMaxSubArraySumOfSizeKForArrayOptimizedWithPrefixSumArray(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
     }
 
-    // TC = O(N^2) DUE TO 2 NESTED FOR LOOPS AND SC = O(1) DUE TO NO EXTRA SPACE USED
+    // TC = O((N-K+1) * K) DUE TO N-K+1 SUB-ARRAYS AND EACH SUB-ARRAY OF SIZE K AND SC = O(1) DUE TO NO EXTRA SPACE USED
     private static int getMaxSubArraySumOfSizeKForArrayBruteForce(final List<Integer> input, final Integer K) {
         int N = input.size();
         int maxSum = Integer.MIN_VALUE;
