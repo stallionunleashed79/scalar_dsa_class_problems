@@ -9,7 +9,9 @@ public class FindMaximumSubArraySumOfLengthK {
     public static void main(String[] args) {
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K BRUTE FORCE " + getMaxSubArraySumOfSizeKForArrayBruteForce(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
         System.out.println();
-        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED " + getMaxSubArraySumOfSizeKForArrayOptimizedWithPrefixSumArray(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
+        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH PREFIX SUM TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithPrefixSumArray(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
+        System.out.println();
+        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
     }
 
     // TC = O((N-K+1) * K) DUE TO N-K+1 SUB-ARRAYS AND EACH SUB-ARRAY OF SIZE K AND SC = O(1) DUE TO NO EXTRA SPACE USED
@@ -37,6 +39,22 @@ public class FindMaximumSubArraySumOfLengthK {
         for (int i =0; i <= N - K; i++) {
             int j = i + K-1;
             maxSum = Math.max(maxSum, i == 0 ? prefixSumArray.get(j) : prefixSumArray.get(j) - prefixSumArray.get(i-1));
+        }
+        return maxSum;
+    }
+
+    // TC = O(N) DUE TO JUST ONE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE USED
+    private static int getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(final List<Integer> input, final Integer K) {
+        int initialSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        for (int i=0; i < K; i++) {
+            initialSum = initialSum + input.get(i);
+        }
+        int N = input.size();
+        for (int i =1; i <= N - K; i++) {
+            int j = i + K-1;
+            initialSum = initialSum-input.get(i-1) + input.get(j);
+            maxSum = Math.max(maxSum, initialSum);
         }
         return maxSum;
     }
