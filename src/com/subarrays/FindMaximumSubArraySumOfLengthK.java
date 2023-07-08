@@ -13,6 +13,9 @@ public class FindMaximumSubArraySumOfLengthK {
     }
 
     // TC = O((N-K+1) * K) DUE TO N-K+1 SUB-ARRAYS AND EACH SUB-ARRAY OF SIZE K AND SC = O(1) DUE TO NO EXTRA SPACE USED
+    // 1) WHEN K = 1, THE SUB-ARRAY IS EACH ELEMENT IN THE ENTIRE ARRAY, SO ITS MAX OF ALL ELEMENTS OF ARRAY AND TC = O(N)
+    // 2) WHEN K = N, THE SUB-ARRAY IS THE ENTIRE ARRAY, SO ITS THE SUM OF ALL ELEMENTS OF ARRAY, RUN JUST ONE LOOP AND FIND SUM AND TC = O(N)
+    // 3) WHEN K = N/2, ITS O(N^2)
     private static int getMaxSubArraySumOfSizeKForArrayBruteForce(final List<Integer> input, final Integer K) {
         int N = input.size();
         int maxSum = Integer.MIN_VALUE;
