@@ -9,6 +9,8 @@ public class PrintStartAndEndIndexOfSubArrayLengthK {
         printStartAndEndIndexOfSubArrayLengthK(List.of( 7, 3, 2, -1, 6, 8, 2, 3 ), 4);
         System.out.println();
         printStartAndEndIndexOfSubArrayLengthK(List.of( 3, 4, 2, -1, 6, 7, 8, 9, 3, 2, -1, 4 ), 3);
+        System.out.println();
+        printStartAndEndIndexOfSubArrayLengthK(List.of( 3, 4, 2, -1, 6, 7, 8, 9, 3, 2, -1, 4 ), 6);
     }
 
     private static void printStartAndEndIndexOfSubArrayLengthK(final List<Integer> input, final int K) {
