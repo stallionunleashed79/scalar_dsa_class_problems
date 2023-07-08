@@ -46,10 +46,10 @@ public class FindMaximumSubArraySumOfLengthK {
     // TC = O(N) DUE TO JUST ONE FOR LOOP AND SC = O(1) SINCE NO EXTRA SPACE USED
     private static int getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(final List<Integer> input, final Integer K) {
         int sum = 0;
-        int maxSum = Integer.MIN_VALUE;
         for (int i=0; i < K; i++) {
             sum = sum + input.get(i);
         }
+        int maxSum = sum;
         int N = input.size();
         for (int i =1; i <= N - K; i++) {
             int j = i + K-1;
