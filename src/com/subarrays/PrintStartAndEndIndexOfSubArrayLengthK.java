@@ -13,6 +13,7 @@ public class PrintStartAndEndIndexOfSubArrayLengthK {
         printStartAndEndIndexOfSubArrayLengthK(List.of( 3, 4, 2, -1, 6, 7, 8, 9, 3, 2, -1, 4 ), 6);
     }
 
+    // TC = O(N) AND SC = O(1) SINCE NO EXTRA SPACE USED
     private static void printStartAndEndIndexOfSubArrayLengthK(final List<Integer> input, final int K) {
         int N = input.size();
         for (int i = 0; i <= N-K; i++) {
