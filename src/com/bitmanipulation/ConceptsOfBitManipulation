@@ -1,0 +1,14 @@
+1) For any odd number x, x & 1 = 1, in other words -> if x & 1 = 0, then x is even -> Faster than modulus operator to check for even / odd
+2) For any even number x, x & 1 = 0, in other words -> if x & 1 = 1, then x is odd -> Faster than modulus operator to check for even / odd
+3) Bitwise operator properties:
+A) X & 0 = 0
+B) X & X = X
+C) X | 0 = X
+D) X | X = X
+E) X ^ 0 = X
+F) X ^ X = 0
+G) X & Y = Y & X
+H) X | Y = Y | X
+I) X & Y & Z = Y & X & Z = X & Z & Y
+3) For any binary number, the Most Significant Bit (MSB) is always negative
+4) For any binary number of N bits, the range of number is from -2^(n-1) to 2^N-1 - 1
