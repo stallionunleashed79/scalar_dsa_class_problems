@@ -1,5 +1,7 @@
 1) For any odd number A then, A & 1 = 1, in other words, if (A & 1 = 1, then A is odd)
 2) For any even number A then, A & 1 = 0, if (A & 1 = 0, then A is even)
+3) For any binary number, the Most Significant Bit (MSB) is always negative
+4) For any binary number of N bits, the range of number is from -2^(n-1) to 2^N-1 - 1
 
 *********************** Bitwise operators *******************
 1) a & 0 = a
@@ -18,8 +20,9 @@
 
 II) Left shift operator:
 
-If the number a is left shifted N times then the result = a * 2^N (till no overflow happens in the sense that the number after the overflow does
-not fall outside the range of the data type,
+1) If the number a is left shifted N times then the result = a * 2^N (till no overflow happens in the sense that the number after the overflow does
+not fall outside the range of the data type),
+2) For the same reason:- 2^N = 1 * (2^N) = 1 << N, in other words:- 2^N = 1 << N -> TC = O(1) and SC = O(1)
 A) For byte: the result after left shift operation should lie in range of -2^7 to 2^7 - 1
 B) For short: the result after left shift operation should lie in range of -2^15 to 2^15 - 1
 C) For int: the result after left shift operation should lie in range of -2^31 to 2^31 - 1
