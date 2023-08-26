@@ -32,6 +32,10 @@ III) Right shift operator
 
 For a number a, the value of a / 2^N = a >> N (right shift operator) and there is no concept of overflow in this case
 
-IV) Special property on & operator:
+IV) Converting a char that represents a binary to an integer and vice-versa
+1) To convert a character that represents a binary to an int, do -> char - '0'. For Eg, convert '1' to 1 -> '1' - '0' and vice-versa,
+to convert an int that represents a binary to its equivalent character, do -> char + '0', for example to convert 1 to '1' -> 1 + '0'
+
+V) Special property on & operator:
 
 If N is a power of 2, then N & (N-1) = 0 (Eg: If N is 2, 4, 8, 16 etc)
