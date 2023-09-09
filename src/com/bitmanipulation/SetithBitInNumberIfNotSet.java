@@ -5,14 +5,14 @@ import com.util.BitManipulationHelper;
 public class SetithBitInNumberIfNotSet {
 
     public static void main(String[] args) {
-        System.out.println("VALUE OF N AFTER SETTING 2ND BIT IN 17 -> " + setithBitInNumberIfNotSet(17, 2));
+        System.out.println("VALUE OF N AFTER SETTING 2ND BIT IN 17 -> " + setIthBitInNumberIfNotSet(17, 2));
         System.out.println("VALUE OF N AFTER SETTING 2ND BIT (IF NOT SET) IN 21 IS SAME AS 21 " +
-                "SINCE ITS ALREADY SET IN FIRST STEP ABOVE -> " + setithBitInNumberIfNotSet(21, 2));
+                "SINCE ITS ALREADY SET IN FIRST STEP ABOVE -> " + setIthBitInNumberIfNotSet(21, 2));
         System.out.println("VALUE OF N AFTER SETTING 2ND BIT IN 17 -> " + setithBitInNumberIfNotSetOptimizedLesserLinesOfCode(17, 2));
     }
 
     // TC = O(1) and SC = O(1) since bit operations take constant time
-    private static int setithBitInNumberIfNotSet(int n, int i) {
+    private static int setIthBitInNumberIfNotSet(int n, int i) {
         if (!BitManipulationHelper.checkIfBitIsSetInPosition(n, i)) {
             // Here we set the bit at ith position of n if not set which is same as adding 2^i (in other words: 1 << i) to n
             // and returning the modified value of n after setting the ith bit
