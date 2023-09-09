@@ -17,7 +17,6 @@ public class SetithBitInNumberIfNotSet {
             // Here we set the bit at ith position of n if not set which is same as adding 2^i (in other words: 1 << i) to n
             // and returning the modified value of n after setting the ith bit
             n = n + (1 << i);
-            return n;
         }
         // if ith bit is set, then just return n
         return n;
