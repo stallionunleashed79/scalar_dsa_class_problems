@@ -22,16 +22,16 @@ public class FindMaximumSubArraySumOfLengthK {
         int N = input.size();
         int maxSum = Integer.MIN_VALUE;
         for (int i =0; i <= N - K; i++) {
-            int j = i + K-1;
+            int j = i + K;
             int sum = 0;
-            for (int e = i; e <= j; e++) {
+            for (int e = i; e < j; e++) {
                 sum = sum + input.get(e);
             }
             maxSum = Math.max(maxSum, sum);
         }
         return maxSum;
     }
-    // TC = O(2N-K) WHICH IS O(N + N-K) AND SC = O(N) DUE TO EXTRA PREFIX SUM ARRAY USED
+    // TC = O(N-K) AND SC = O(N) DUE TO EXTRA PREFIX SUM ARRAY USED
     private static int getMaxSubArraySumOfSizeKForArrayOptimizedWithPrefixSumArray(final List<Integer> input, final Integer K) {
         final List<Integer> prefixSumArray = ArrayUtils.buildPrefixSumArray(input);
         int N = input.size();
