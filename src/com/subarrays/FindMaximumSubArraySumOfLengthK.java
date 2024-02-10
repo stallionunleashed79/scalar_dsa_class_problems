@@ -9,6 +9,8 @@ public class FindMaximumSubArraySumOfLengthK {
     public static void main(String[] args) {
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K BRUTE FORCE " + getMaxSubArraySumOfSizeKForArrayBruteForce(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
         System.out.println();
+        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K CARRY FORWARD " + getMaxSubArraySumOfSizeKForArrayWithCarryForward(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
+        System.out.println();
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH PREFIX SUM TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithPrefixSumArray(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
         System.out.println();
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
@@ -28,6 +30,20 @@ public class FindMaximumSubArraySumOfLengthK {
                 sum = sum + input.get(e);
             }
             maxSum = Math.max(maxSum, sum);
+        }
+        return maxSum;
+    }
+
+    private static int getMaxSubArraySumOfSizeKForArrayWithCarryForward(final List<Integer> input, final Integer K) {
+        int N = input.size();
+        int maxSum = Integer.MIN_VALUE;
+        for (int i =0; i <= N - K; i++) {
+            int j = i + K;
+            int sum = 0;
+            for (int e = i; e < j; e++) {
+                sum = sum + input.get(e);
+                maxSum = Math.max(maxSum, sum);
+            }
         }
         return maxSum;
     }
