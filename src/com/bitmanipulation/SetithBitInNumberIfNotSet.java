@@ -28,7 +28,6 @@ public class SetithBitInNumberIfNotSet {
     // already set then nothing to do, so the problem solved in just 1 line of code with constant time TC
     // So to set the ith bit if not set, just do -> n | 2^i which is same as n | (1 << i)
     private static int setithBitInNumberIfNotSetOptimizedLesserLinesOfCode(int n, int i) {
-        n = n | (1 << i);
-        return n;
+        return n | (1 << i);
     }
 }

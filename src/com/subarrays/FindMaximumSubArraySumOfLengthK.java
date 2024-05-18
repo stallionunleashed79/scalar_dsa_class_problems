@@ -34,6 +34,7 @@ public class FindMaximumSubArraySumOfLengthK {
         return maxSum;
     }
 
+    // TC = O((N-K+1) * K) DUE TO N-K+1 SUB-ARRAYS AND EACH SUB-ARRAY OF SIZE K AND SC = O(1) DUE TO NO EXTRA SPACE USED
     private static int getMaxSubArraySumOfSizeKForArrayWithCarryForward(final List<Integer> input, final Integer K) {
         int N = input.size();
         int maxSum = Integer.MIN_VALUE;
