@@ -7,6 +7,7 @@ public class GivenAPerfectSquareFindItsSquareRoot {
         System.out.println("SQAURE ROOT OF PERFECT SQUARE IS "+ findSquareRootOptimized(81));
         System.out.println("SQAURE ROOT OF PERFECT SQUARE IS "+ findSquareRootBruteForce(100));
         System.out.println("SQAURE ROOT OF PERFECT SQUARE IS "+ findSquareRootBruteForce(81));
+        System.out.println("SQAURE ROOT OF PERFECT SQUARE IS "+ findSquareRootRecursive(81));
     }
 
     /**
@@ -41,6 +42,30 @@ public class GivenAPerfectSquareFindItsSquareRoot {
                 left = mid + 1;
             } else {
                 return mid;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * TC = O(LOGN) AND SC = O(1)
+     * @param N
+     * @return
+     */
+    private static Integer findSquareRootRecursive(final Integer N) {
+        return findSquareRootRecursiveHelper(N, 1, N);
+    }
+
+    private static Integer findSquareRootRecursiveHelper(final Integer N, final Integer startIndex, final Integer endIndex) {
+        if (startIndex <= endIndex) {
+            int median = (startIndex + endIndex) / 2;
+            int result = median * median;
+            if (result == N) {
+                return median;
+            } else if (result < N) {
+                return findSquareRootRecursiveHelper(N, median + 1, endIndex);
+            } else {
+                return findSquareRootRecursiveHelper(N, startIndex, median - 1);
             }
         }
         return -1;
