@@ -22,9 +22,10 @@ public class CountPossiblePairsInGivenArray {
                 continue;
             }
             for (int j = i+1; j < input.length; j++) {
-                if (input[j] == 'g') {
-                    count++;
+                if (input[j] != 'g') {
+                    continue;
                 }
+                count++;
             }
         }
         return count;
