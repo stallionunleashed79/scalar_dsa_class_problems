@@ -1,5 +1,8 @@
 package com.introtoarrays;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * You are given an array prices where prices[i] is the price of a given stock on the ith day.
  * You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
@@ -8,8 +11,9 @@ package com.introtoarrays;
 public class BuyAndSellStock {
 
     public static void main(String[] args) {
-        System.out.println("MAX PROFIT FOR ALL DAYS "+ maxProfitBruteForce(new int[]{ 7,1,5,3,6,4 }));
-        System.out.println("MAX PROFIT FOR ALL DAYS "+ maxProfitOptimized(new int[]{ 7,1,5,3,6,4 }));
+        System.out.println("MAX PROFIT FOR ALL DAYS BRUTE FORCE "+ maxProfitBruteForce(new int[]{ 7,1,5,3,6,4 }));
+        System.out.println("MAX PROFIT FOR ALL DAYS OPTIMIZED "+ maxProfitOptimized(new int[]{ 7,1,5,3,6,4 }));
+        System.out.println("MAX PROFIT FOR ALL DAYS OPTIMIZED USING CARRY FORWARD TECHNIQUE "+ maxProfitOptimizedWithCarryForwardTechnique(Arrays.asList( 7,1,5,3,6,4 )));
     }
 
     // TC = O(N^2) DUE TO 2 NESTED FOR LOOPS AND SC = O(1) DUE TO NO EXTRA SPACE USED
@@ -33,5 +37,17 @@ public class BuyAndSellStock {
             pro = Math.max(pro,i-min);
         }
         return pro;
+    }
+
+    private static int maxProfitOptimizedWithCarryForwardTechnique(final List<Integer> input) {
+        int maxElement = input.get(input.size() - 1);
+        int maxProfit = Integer.MIN_VALUE;
+        for (int i = input.size() - 2; i>= 0; i--) {
+            if (input.get(i).compareTo(maxElement) > 0) {
+                maxElement = input.get(i);
+            }
+            maxProfit = Math.max(maxProfit, maxElement - input.get(i));
+        }
+        return maxProfit;
     }
 }
