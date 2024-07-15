@@ -14,6 +14,8 @@ public class BuyAndSellStock {
         System.out.println("MAX PROFIT FOR ALL DAYS BRUTE FORCE "+ maxProfitBruteForce(new int[]{ 7,1,5,3,6,4 }));
         System.out.println("MAX PROFIT FOR ALL DAYS OPTIMIZED "+ maxProfitOptimized(new int[]{ 7,1,5,3,6,4 }));
         System.out.println("MAX PROFIT FOR ALL DAYS OPTIMIZED USING CARRY FORWARD TECHNIQUE "+ maxProfitOptimizedWithCarryForwardTechnique(Arrays.asList( 7,1,5,3,6,4 )));
+        System.out.println("MAX PROFIT FOR ALL DAYS OPTIMIZED USING CARRY FORWARD TECHNIQUE "+ maxProfitOptimizedWithCarryForwardTechnique(Arrays.asList( 1,3,7,4,5 )));
+        System.out.println("MAX PROFIT FOR ALL DAYS OPTIMIZED USING CARRY FORWARD TECHNIQUE "+ maxProfitOptimizedWithCarryForwardTechnique(Arrays.asList( 7,6,4,3,1 )));
     }
 
     // TC = O(N^2) DUE TO 2 NESTED FOR LOOPS AND SC = O(1) DUE TO NO EXTRA SPACE USED
