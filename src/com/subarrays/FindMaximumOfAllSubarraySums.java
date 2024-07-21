@@ -9,7 +9,10 @@ public class FindMaximumOfAllSubarraySums {
     public static void main(String[] args) {
         System.out.println("MAX OF ALL SUBARRAY SUMS USING CARRY FORWARD TECHNIQUE "+ findMaximumOfAllSubarraySumsOptimizedUsingCarryForward(
                 List.of( 7, 3, 2, -1, 6, 8, 2, 3 )));
-        System.out.println("DOES CONTAIN SUBARRAY WITH SUM ZERO "+ findIfExistsSubArrayWithSumZeroWithCarryForwardTechnique(Arrays.asList(2, 2, 1, -3, 4, 3, 1, -2, -3, 2)));
+        System.out.println("DOES CONTAIN SUBARRAY WITH SUM ZERO "+ findIfExistsSubArrayWithSumZeroWithCarryForwardTechnique(
+                Arrays.asList(2, 2, 1, -3, 4, 3, 1, -2, -3, 2)));
+        System.out.println("DOES CONTAIN SUBARRAY WITH SUM ZERO "+ findIfExistsSubArrayWithSumZeroWithCarryForwardTechnique(
+                Arrays.asList(2, 3, 1, -3, 4, 3, 1, -2, -3, 2)));
     }
 
     // TC = O(N^2) and SC = O(1) due to no extra space needed
