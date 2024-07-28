@@ -4,7 +4,7 @@ import java.util.*;
 
 // GIVEN AN ARRAY OF SIZE N, RETURN 2 VALUES FROM ARRAY SUCH THAT THE SUM
 // OF ELEMENTS AT THOSE 2 INDICES EQUALS A GIVEN TARGET K ELSE RETURN EMPTY ARRAY
-public class TowSumProblemWithHashSet {
+public class TwoSumProblemWithHashSet {
 
     public static void main(String[] args) {
         System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairOfValuesSummingToKOptimized(

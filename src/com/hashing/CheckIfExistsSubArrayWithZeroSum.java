@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 // GIVEN AN ARRAY OF SIZE N, CHECK IF THERE EXISTS A SUBARRAY WITH SUM OF 0 IN THE ARRAY
-public class CheckIfExistsSubArrayWithSumZero {
+public class CheckIfExistsSubArrayWithZeroSum {
 
     public static void main(String[] args) {
         System.out.println("DOES EXIST A ZERO SUM SUBARRAY FOR "+doesExistZeroSumSubArray(List.of(2, 2, 1, -3, 4, 3, 1, -2, -3, 2)));

@@ -1,12 +1,11 @@
 package com.hashing;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 // GIVEN AN ARRAY OF SIZE N, RETURN 2 VALUES FROM ARRAY A[I] and A[J] SUCH THAT A[I] - A[J] = K
 // AND I != J OR ELSE RETURN EMPTY ARRAY
-public class TowDifferenceProblemWithHashSet {
+public class TwoDifferenceProblemWithHashSet {
 
     public static void main(String[] args) {
         System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairWhoseDifferenceIsKKOptimized(
