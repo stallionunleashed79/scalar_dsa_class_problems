@@ -1,9 +1,9 @@
-package com.search;
+package com.binarysearch;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class BinarySearch {
+public class FindFirstOccurenceOfNumberInArrayWithDuplicates {
 
     public static void main(String[] args) {
         System.out.println("PERFORM BINARY SEARCH FOR K ON "+ binarySearch(Arrays.asList(3, 6, 9, 12, 14, 19, 20, 23, 25, 27), 20));
