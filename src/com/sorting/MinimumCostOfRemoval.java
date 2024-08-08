@@ -1,6 +1,8 @@
 package com.sorting;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 // GIVEN AN ARRAY OF INTEGERS OF SIZE N, YOU CAN REMOVE ONE ARRAY ELEMENT AT A TIME. COST OF REMOVAL OF AN ELEMENT IS THE SUM OF ALL
 // ELEMENTS OF ARRAY JUST BEFORE REMOVAL OF THAT ELEMENT. FIND THE MINIMUM COST OF REMOVAL OF ALL ELEMENTS
@@ -24,5 +26,23 @@ public class MinimumCostOfRemoval {
            sum = sum + (i+1)*input[i];
        }
        return sum;
+    }
+
+    private static int countNumberOfNobleIntegers(final List<Integer> input) {
+        int count = 0;
+        Collections.sort(input, Collections.reverseOrder());
+        if (input.get(0) == 0) {
+            count++;
+        }
+        int elementsLesserThanCurrent = -1;
+        for (int i = 1; i <input.size(); i++) {
+            final Integer current = input.get(i);
+            if (current.compareTo(input.get(i-1)) != 0) {
+                elementsLesserThanCurrent = i;
+            } else if (current.compareTo(input.get(i-1)) == 0 && current.compareTo(i-1)== 0){
+                count++;
+            }
+        }
+        return count;
     }
 }
