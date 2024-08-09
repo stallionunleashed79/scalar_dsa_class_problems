@@ -36,7 +36,6 @@ public class FindKthLargestElementInArrayWithoutSortingArray {
             input.set(indexOfLargestNumber, input.get(i));
             input.set(i, temp);
         }
-        final Set<Integer> hashSet = new HashSet<>(input);
-        return new ArrayList<>(hashSet).get(hashSet.size() - K);
+        return input.get(input.size() - K);
     }
 }
