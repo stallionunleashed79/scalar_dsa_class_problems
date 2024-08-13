@@ -16,7 +16,7 @@ public class FindMaximumSubArraySumOfLengthK {
         System.out.println();
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
         System.out.println();
-        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(Arrays.asList(3, -2, 4, -1, 2, 6), 3));
+        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(List.of(3, -2, 4, -1, 2, 6), 3));
     }
 
     // TC = O((N-K+1) * K) DUE TO N-K+1 SUB-ARRAYS AND EACH SUB-ARRAY OF SIZE K AND SC = O(1) DUE TO NO EXTRA SPACE USED
