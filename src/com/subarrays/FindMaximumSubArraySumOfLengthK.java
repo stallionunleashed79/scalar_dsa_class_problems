@@ -16,12 +16,7 @@ public class FindMaximumSubArraySumOfLengthK {
         System.out.println();
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
         System.out.println();
-        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE SLIGHTLY DIFFERENT IMPLEMENTATION " + getMaximumSumOfSubArraysOfLengthKSlidingWindowSlightlyDifferentImplementation(List.of( -3, 4, -2, 5, 3, -2, 8, 2, -1, 4 ), 5));
-        System.out.println();
         System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE " + getMaxSubArraySumOfSizeKForArrayOptimizedWithSlidingWindowTechnique(Arrays.asList(3, -2, 4, -1, 2, 6), 3));
-        System.out.println();
-        System.out.println("MAX SUB-ARRAY SUM OF LENGTH K OPTIMIZED WITH SLIDING WINDOW TECHNIQUE SLIGHTLY DIFFERENT IMPLEMENTATION "+ getMaximumSumOfSubArraysOfLengthKSlidingWindowSlightlyDifferentImplementation(
-                Arrays.asList(3, -2, 4, -1, 2, 6), 3));
     }
 
     // TC = O((N-K+1) * K) DUE TO N-K+1 SUB-ARRAYS AND EACH SUB-ARRAY OF SIZE K AND SC = O(1) DUE TO NO EXTRA SPACE USED
@@ -82,20 +77,5 @@ public class FindMaximumSubArraySumOfLengthK {
             maxSum = Math.max(maxSum, sum);
         }
         return maxSum;
-    }
-
-    private static Integer getMaximumSumOfSubArraysOfLengthKSlidingWindowSlightlyDifferentImplementation(final List<Integer> input, final Integer K) {
-        int initialSum = 0;
-        for (int i = 0; i <K; i++) {
-            initialSum = initialSum + input.get(i);
-        }
-        int currentSum = initialSum, answer = Integer.MIN_VALUE;
-        final Integer N = input.size();
-        for (int i = 1; i <= N - K; i++) {
-            int j = i + K -1;
-            currentSum = currentSum - input.get(i - 1) + input.get(j);
-            answer = Math.max(answer, currentSum);
-        }
-        return answer;
     }
 }
