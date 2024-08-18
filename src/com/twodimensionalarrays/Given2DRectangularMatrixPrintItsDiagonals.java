@@ -14,9 +14,8 @@ public class Given2DRectangularMatrixPrintItsDiagonals {
     // TC = O(N*M) WHERE N IS NO OF ROWS AND M IS NO OF COLUMNS AND SC=O(1) SINCE NO EXTRA SPACE NEEDED
     private static void printDiagonalsOf2DRectMatrix(final List<List<Integer>> matrix) {
         // PART-1 FIRST PRINTING THE DIAGONAL ELEMENTS FROM LEFT->RIGHT TILL END OF COLUMNS
-        int i = 0;
         for (int j = 0; j < matrix.get(0).size(); j++) {
-            int xTemp = i, yTemp = j;
+            int xTemp = 0, yTemp = j;
             System.out.println();
             while (xTemp < matrix.size() && yTemp >= 0) {
                 System.out.print(matrix.get(xTemp).get(yTemp) +" ");
