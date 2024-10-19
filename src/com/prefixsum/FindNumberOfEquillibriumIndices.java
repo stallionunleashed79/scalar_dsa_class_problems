@@ -20,7 +20,7 @@ public class FindNumberOfEquillibriumIndices {
         final List<Integer> pfSumArray = ArrayUtils.buildPrefixSumArray(input);
         for (int i = 0; i < input.size(); i++) {
             int leftSum = i == 0 ? 0 : pfSumArray.get(i-1);
-            int rightSum = i == input.size() - 1 ? 0 : pfSumArray.get(input.size() - 1) - pfSumArray.get(i);
+            int rightSum = pfSumArray.get(input.size() - 1) - pfSumArray.get(i);
             if (leftSum == rightSum) {
                 count++;
             }
