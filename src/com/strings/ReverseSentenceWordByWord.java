@@ -13,6 +13,7 @@ public class ReverseSentenceWordByWord {
 
     public static void main(String[] args) {
         System.out.println("REVERSE SENTENCE WORD BY WORD " + reverseSentenceWordByWord("here is a boy"));
+        System.out.println("REVERSE SENTENCE WORD BY WORD " + reverseSentenceWordByWord("MAILMEN BRING LETTERS"));
     }
 
     // 2 STEP APPROACH:
