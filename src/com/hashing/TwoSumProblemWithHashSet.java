@@ -9,6 +9,8 @@ public class TwoSumProblemWithHashSet {
     public static void main(String[] args) {
         System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairOfValuesSummingToKOptimized(
                 List.of( 8, 9, 1, -2, 4, 5, 11, -6, 7, 5 ), 11)));
+        System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS WITH 2 POINTER APPROACH "+ Arrays.toString(getFirstPairOfValuesSummingToKWith2PointerApproach(
+                new ArrayList<>(List.of( 8, 9, 1, -2, 4, 5, 11, -6, 7, 5 )), 11)));
         System.out.println("FIRST PAIR OF ELEMENTS SUMMING TO K EQUALS "+ Arrays.toString(getFirstPairOfValuesSummingToKOptimized(
                 List.of( 8, 9, 1, -2, 4, 5, 11, -6, 7, 5 ), 22)));
         System.out.println("NUMBER OF PAIRS OF ELEMENTS SUMMING TO K EQUALS "+ getNumberOfPairsWhoseSumIsEqualToTargetSum(
@@ -18,7 +20,8 @@ public class TwoSumProblemWithHashSet {
         System.out.println("NUMBER OF PAIRS OF ELEMENTS SUMMING TO K EQUALS "+ getNumberOfPairsWhoseSumIsEqualToTargetSum(
                 List.of( 8, 9, 2, 2, -2, 4, 5, 11, -6, 4 ), 7));
         System.out.println("NUMBER OF PAIRS OF ELEMENTS SUMMING TO K EQUALS "+ getNumberOfPairsWhoseSumIsEqualToTargetSum(
-                List.of( 8, 9, 2, -2, 4, 5, -2, 5, 2 ), 7));
+                Arrays.asList( 8, 9, 2, -2, 4, 5, -2, 5, 2 ), 7));
+
     }
     // TC = O(N) and SC = O(N) for the extra hashset
     private static Integer[] getFirstPairOfValuesSummingToKOptimized(final List<Integer> input, final Integer K) {
@@ -45,5 +48,27 @@ public class TwoSumProblemWithHashSet {
             frequencyMap.compute(element, (k, v) -> v == null ? 1 : v+1);
         }
         return answer;
+    }
+
+    /**
+     * 2 POINTER APPROACH FOR 2-SUM PROBLEM
+     * @param input
+     * @param K
+     * @return
+     */
+    private static Integer[] getFirstPairOfValuesSummingToKWith2PointerApproach(final List<Integer> input, final Integer K) {
+        Collections.sort(input);
+        int i = 0, j = input.size() - 1;
+        while (i < j) {
+            int sum = Integer.sum(input.get(i), input.get(j));
+            if (sum < K) {
+                i++;
+            } else if (sum > K) {
+                j--;
+            } else {
+                return new Integer[]{input.get(i), input.get(j)};
+            }
+        }
+        return new Integer[]{};
     }
 }
