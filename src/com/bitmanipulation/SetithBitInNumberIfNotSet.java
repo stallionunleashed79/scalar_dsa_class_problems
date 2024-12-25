@@ -13,7 +13,7 @@ public class SetithBitInNumberIfNotSet {
 
     // TC = O(1) and SC = O(1) since bit operations take constant time
     private static int setIthBitInNumberIfNotSet(int n, int i) {
-        if (!BitManipulationHelper.checkIfBitIsSetInPosition(n, i)) {
+        if (BitManipulationHelper.checkIfBitIsUnSetInPosition(n, i)) {
             // Here we set the bit at ith position of n if not set which is same as adding 2^i (in other words: 1 << i) to n
             // and returning the modified value of n after setting the ith bit
             n = n + (1 << i);

@@ -7,6 +7,10 @@ public class BitManipulationHelper {
         return ((a >> i) & 1) == 1;
     }
 
+    public static boolean checkIfBitIsUnSetInPosition(int a, int i) {
+        return ((a >> i) & 1) == 0;
+    }
+
     public static int[] convertToBinary(int N, int noOfBits) {
         int[] binary = new int[noOfBits];
         int index = 0;
