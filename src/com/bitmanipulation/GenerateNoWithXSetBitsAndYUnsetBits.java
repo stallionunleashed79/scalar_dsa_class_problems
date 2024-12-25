@@ -16,7 +16,7 @@ public class GenerateNoWithXSetBitsAndYUnsetBits {
 
     private static int setXBitsAndUnsetYBits(int x, int y) {
         int ans = 0;
-        for (int i = x; i < x + y; i++) {
+        for (int i = y; i < x + y; i++) {
             ans = ans + (1 << i);
         }
         return ans;
