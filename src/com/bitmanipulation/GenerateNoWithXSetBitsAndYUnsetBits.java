@@ -10,6 +10,8 @@ public class GenerateNoWithXSetBitsAndYUnsetBits {
         System.out.println("GENERATE NUMBER AFTER SETTING X BITS AND UNSETING Y BITS " + setXBitsAndUnsetYBits(2, 3));
         System.out.println("GENERATE NUMBER AFTER SETTING X BITS " + setXBits(2));
         System.out.println("GENERATE NUMBER AFTER SETTING X BITS " + setXBits(3));
+        System.out.println("GENERATE NUMBER AFTER SETTING X BITS " + setXBitsOptimized(2));
+        System.out.println("GENERATE NUMBER AFTER SETTING X BITS " + setXBitsOptimized(3));
     }
 
     private static int setXBitsAndUnsetYBits(int x, int y) {
@@ -26,5 +28,9 @@ public class GenerateNoWithXSetBitsAndYUnsetBits {
             ans = ans + (1 << i);
         }
         return ans;
+    }
+
+    private static int setXBitsOptimized(int x) {
+        return (1 << x) -1;
     }
 }
