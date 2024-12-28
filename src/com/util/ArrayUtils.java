@@ -67,6 +67,15 @@ public class ArrayUtils {
         }
     }
 
+    public static int[] reversePartOfArray(final int[] input, final int startIndex, final int endIndex) {
+        for (int i =startIndex, j = endIndex; i <= j; i++, j--) {
+            int temp = input[i];
+            input[i] = input[j];
+            input[j] = temp;
+        }
+        return input;
+    }
+
     public static List<List<Integer>> getTransposeOf2DSquareMatrix(final List<List<Integer>> input) {
         for (int i=0;i < input.size();i++) {
             for (int j = i+1; j < input.get(0).size(); j++) {
