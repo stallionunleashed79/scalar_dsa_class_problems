@@ -46,15 +46,15 @@ public class FindMajorityElementFreqGreaterThanSizeBy2 {
     }
 
     private static int getBestPossibleCandidateForMajorityElement(int[] input) {
-        int bestPossibleCandidateForMajorityElement = input[0];
-        int count = 1;
+        int bestPossibleCandidateForMajorityElement = -1;
+        int count = 0;
         // FOR LOOP TO FIND BEST POSSIBLE CANDIDATE FOR MAJORITY ELEMENT
-        for (int i = 0; i < input.length-1; i++) {
-            if (input[i] == input[i+1]) {
-                bestPossibleCandidateForMajorityElement = input[i+1];
+        for (int i = 0; i < input.length; i++) {
+            if (count == 0) {
+                bestPossibleCandidateForMajorityElement = input[i];
+                count = 1;
+            } else if (input[i] == bestPossibleCandidateForMajorityElement) {
                 count++;
-            } else if (count == 0) {
-                bestPossibleCandidateForMajorityElement = input[i+1];
             } else {
                 count--;
             }
