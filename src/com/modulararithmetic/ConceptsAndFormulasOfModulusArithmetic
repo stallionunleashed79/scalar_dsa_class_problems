@@ -8,3 +8,5 @@
 
 3-A) (a + b) % M = (a % M + b % M) % M --> Modular Arithmetic Rule
 3-B) (a * b) % M = (a % M * b % M) % M --> Modular Multiplicative Rule
+
+4) a % M = a % M + M if a is negative
