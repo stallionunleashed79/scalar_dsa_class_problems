@@ -36,20 +36,19 @@ public class FindMaximumSumSubArrayKedanesAlgorithm {
      * @return
      */
     private static List<Integer> maximumSumSubArrayIndices(final List<Integer> input) {
-        int sum = 0, maxSum = Integer.MIN_VALUE, l = 0, L = 0, R = 0;
+        int sum = 0, maxSum = Integer.MIN_VALUE, left = 0, right = 0;
         for (int i = 0; i < input.size(); i++) {
             sum = sum + input.get(i);
             if (maxSum < sum) {
                 maxSum = sum;
-                L = l;
-                R = i;
+                right = i;
             }
             if (sum < 0) {
                 sum = 0;
-                l = i + 1;
+                left = i + 1;
             }
         }
-        return Arrays.asList(L, R);
+        return Arrays.asList(left, right);
     }
 
     private static List<Integer> subArraySumsStartingAtIndex(final List<Integer> input, final Integer start) {
