@@ -50,14 +50,4 @@ public class FindMaximumSumSubArrayKedanesAlgorithm {
         }
         return Arrays.asList(left, right);
     }
-
-    private static List<Integer> subArraySumsStartingAtIndex(final List<Integer> input, final Integer start) {
-        final List<Integer> result = new ArrayList<>();
-        int sum = 0;
-        for (int j = start; j < input.size(); j++) {
-            sum = sum + input.get(j);
-            result.add(sum);
-        }
-        return result;
-    }
 }
