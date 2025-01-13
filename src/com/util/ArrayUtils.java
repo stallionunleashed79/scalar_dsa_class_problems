@@ -1,6 +1,7 @@
 package com.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayUtils {
@@ -97,5 +98,39 @@ public class ArrayUtils {
             transposedMatrix.add(row);
         }
         return transposedMatrix;
+    }
+
+    /**
+     * Return all the maximum value arrays going from beginning to end of list
+     * @param input
+     * @return
+     */
+    public static List<Integer> constructLeftMaxArray(final List<Integer> input) {
+        final List<Integer> maximums = new ArrayList<>();
+        Integer currentMaximum = Integer.MIN_VALUE;
+        for (int i = 0; i < input.size(); i++) {
+            if (input.get(i).compareTo(currentMaximum) > 0) {
+                currentMaximum = input.get(i);
+            }
+            maximums.add(currentMaximum);
+        }
+        return maximums;
+    }
+
+    /**
+     * Return all the maximum value arrays going from end to beginning of list
+     * @param input
+     * @return
+     */
+    public static List<Integer> constructRightMaxArray(final List<Integer> input) {
+        final List<Integer> maximums = new ArrayList<>(Collections.nCopies(input.size(), 0));
+        Integer currentMaximum = Integer.MIN_VALUE;
+        for (int i = input.size() - 1; i >= 0; i--) {
+            if (input.get(i).compareTo(currentMaximum) > 0) {
+                currentMaximum = input.get(i);
+            }
+            maximums.set(i, currentMaximum);
+        }
+        return maximums;
     }
 }
