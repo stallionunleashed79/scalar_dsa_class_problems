@@ -107,8 +107,9 @@ public class ArrayUtils {
      */
     public static List<Integer> constructLeftMaxArray(final List<Integer> input) {
         final List<Integer> maximums = new ArrayList<>();
-        Integer currentMaximum = Integer.MIN_VALUE;
-        for (int i = 0; i < input.size(); i++) {
+        maximums.add(0);
+        Integer currentMaximum = input.get(0);
+        for (int i = 1; i < input.size(); i++) {
             if (input.get(i).compareTo(currentMaximum) > 0) {
                 currentMaximum = input.get(i);
             }
@@ -124,8 +125,9 @@ public class ArrayUtils {
      */
     public static List<Integer> constructRightMaxArray(final List<Integer> input) {
         final List<Integer> maximums = new ArrayList<>(Collections.nCopies(input.size(), 0));
-        Integer currentMaximum = Integer.MIN_VALUE;
-        for (int i = input.size() - 1; i >= 0; i--) {
+        maximums.set(input.size() - 1, 0);
+        Integer currentMaximum = input.get(input.size() - 1);
+        for (int i = input.size() - 2; i >= 0; i--) {
             if (input.get(i).compareTo(currentMaximum) > 0) {
                 currentMaximum = input.get(i);
             }

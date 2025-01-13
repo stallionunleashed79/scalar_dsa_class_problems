@@ -18,7 +18,8 @@ public class RainWaterTrapping {
             int leftMax = leftMaxArray.get(i);
             int rightMax = rightMaxArray.get(i);
             int min = Math.min(leftMax, rightMax);
-            answer = answer + (min - input.get(i));
+            int delta = Math.max(min - input.get(i), 0);
+            answer = answer + delta;
         }
         return answer;
     }
