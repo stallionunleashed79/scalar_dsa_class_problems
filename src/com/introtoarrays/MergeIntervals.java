@@ -20,10 +20,10 @@ public class MergeIntervals {
         interval3.setEnd(6);
         final Interval interval4 = new Interval();
         interval4.setStart(7);
-        interval4.setEnd(8);
+        interval4.setEnd(10);
         final Interval interval5 = new Interval();
-        interval5.setStart(9);
-        interval5.setEnd(10);
+        interval5.setStart(11);
+        interval5.setEnd(12);
         final List<Interval> input = Arrays.asList(interval1, interval2, interval3, interval4, interval5);
         final List<Interval> result = mergeSortedIntervals(input);
         System.out.print("NON MERGED INTERVALS ");
@@ -44,13 +44,7 @@ public class MergeIntervals {
                 current.setEnd(Math.max(current.getEnd(), next.getEnd()));
             }
         }
-        final Interval prev = nonOverlappingIntervals.get(nonOverlappingIntervals.size() - 1);
-        if (current.getStart().compareTo(prev.getEnd()) <= 0) {
-            prev.setStart(Math.min(current.getStart(), prev.getStart()));
-            prev.setEnd(Math.max(current.getEnd(), prev.getEnd()));
-        } else {
-            nonOverlappingIntervals.add(current);
-        }
+        nonOverlappingIntervals.add(current);
         return nonOverlappingIntervals;
     }
 }
