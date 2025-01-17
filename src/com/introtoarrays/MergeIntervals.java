@@ -104,7 +104,7 @@ public class MergeIntervals {
                 for (int j = i; j < intervals.size(); j++) {
                     nonOverlappingIntervals.add(intervals.get(j));
                 }
-                break;
+                return nonOverlappingIntervals;
             } else {
                 input.setStart(Math.min(input.getStart(), current.getStart()));
                 input.setEnd(Math.max(input.getEnd(), current.getEnd()));
