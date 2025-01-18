@@ -10,6 +10,11 @@ public class FindFirstMissingNaturalNumber {
         System.out.println("FIND FIRST MISSING NATURAL NUMBER "+ findFirstNaturalNumberOptimized(Arrays.asList(1, 0, -5, -6, 4, 2)));
     }
 
+    /**
+     * Time complexity of O(N) and space complexity of O(1) since no extra space used
+     * @param input
+     * @return
+     */
     private static int findFirstNaturalNumberOptimized(final List<Integer> input) {
         for (int i = 0; i < input.size(); i++) {
             Integer current = input.get(i);
