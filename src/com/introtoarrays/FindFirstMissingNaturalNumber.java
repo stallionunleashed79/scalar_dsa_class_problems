@@ -8,6 +8,7 @@ public class FindFirstMissingNaturalNumber {
     public static void main(String[] args) {
         System.out.println("FIND FIRST MISSING NATURAL NUMBER "+ findFirstNaturalNumberOptimized(Arrays.asList(1, 6, 3, 2, 4)));
         System.out.println("FIND FIRST MISSING NATURAL NUMBER "+ findFirstNaturalNumberOptimized(Arrays.asList(1, 0, -5, -6, 4, 2)));
+        System.out.println("FIND FIRST MISSING NATURAL NUMBER "+ findFirstNaturalNumberOptimized(Arrays.asList(4, 1, 3, 3, 2, 3)));
     }
 
     /**
@@ -20,6 +21,9 @@ public class FindFirstMissingNaturalNumber {
             Integer current = input.get(i);
             while (current!= i+1 && current.compareTo(0) > 0 && current.compareTo(input.size() - 1) <= 0) {
                 Integer next = input.get(current - 1);
+                if (current.compareTo(next) == 0) {
+                    break;
+                }
                 input.set(i, next);
                 input.set(current-1, current);
                 current = input.get(i);
