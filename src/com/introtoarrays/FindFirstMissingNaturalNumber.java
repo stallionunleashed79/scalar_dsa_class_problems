@@ -30,6 +30,6 @@ public class FindFirstMissingNaturalNumber {
                 return i+1;
             }
         }
-        return -1;
+        return input.size() + 1;
     }
 }
