@@ -1,6 +1,5 @@
 package com.subarrays;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,10 +20,10 @@ public class FindMaximumSumSubArrayKedanesAlgorithm {
         int sum = 0, maxSum = Integer.MIN_VALUE;
         for (Integer element : input) {
             sum = sum + element;
-            maxSum = Math.max(maxSum, sum);
             if (sum < 0) {
                 sum = 0;
             }
+            maxSum = Math.max(maxSum, sum);
         }
         return maxSum;
     }
