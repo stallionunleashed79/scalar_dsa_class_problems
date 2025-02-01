@@ -17,14 +17,12 @@ public class KthSymbol {
             return 0;
         }
         int parent = kthGrammar(N-1, K / 2 + K % 2);
-        boolean kIsOdd = K % 2 == 1;
-        if (parent == 0) {
-            return kIsOdd ? 0 : 1;
+        // IF K IS AN ODD INDEX THEN VALUE AT NTH ROW / KTH INDEX IS SAME AS VALUE OF PARENT AND K IS EVEN INDEX
+        // THEN VALUE AT NTH ROW / KTH INDEX IS THE FLIPPED VALUE OF ITS PARENT
+        if (K % 2 == 1) {
+            return parent;
         }
-        if (parent == 1) {
-            return kIsOdd ? 1 : 0;
-        }
-        return 0;
+        return parent == 0 ? 1 : 0;
     }
 
 }
