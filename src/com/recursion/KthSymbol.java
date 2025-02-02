@@ -8,6 +8,13 @@ package com.recursion;
 public class KthSymbol {
 
     // NOTE: I PULLED THE SOLUTION FROM THE FOLLOWING YOUTUBE LINK: https://www.youtube.com/watch?v=QRa9ZVGMWlY
+
+    /**
+     * TC = O (MIN(N, LOGK) AND SINCE K CAN BE MAXIMUM 2^N - 1 SINCE K CAN THE LAST ELEMENT IN NTH ROW, LOGK IS N
+     * AND SO O(MIN(N, N) WHICH O(N) AND SC = O(N) WHICH IS THE SIZE OF THE CALL STACK SINCE THE RECURSIVE CALLS
+     * GO ALL THE WAY UP AND STOP WHEN K = 0 OR N = 1 WHICH IS N CALLS
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("FIND THE SYMBOL AT THE NTH ROW AND KTH INDEX FOR THE ABOVE PROBLEM "+ kthGrammar(2, 1));
         System.out.println("FIND THE SYMBOL AT THE NTH ROW AND KTH INDEX FOR THE ABOVE PROBLEM "+ kthGrammar(2, 2));
