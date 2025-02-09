@@ -15,6 +15,10 @@ public class ImplementAQueueUsingAnArray {
         System.out.println("CURRENT ELEMENT "+ dequeue());
     }
 
+    /**
+     * TC = O(1)
+     * @param element
+     */
     private static void enqueue(int element) {
         if (top < input.length - 1) {
             top++;
@@ -22,6 +26,11 @@ public class ImplementAQueueUsingAnArray {
         }
     }
 
+    /**
+     * TC = O(N) SINCE WE ARE SHIFTING ALL ELEMENTS TO FRONT OF THE QUEUE
+     * @return
+     * @throws Exception
+     */
     private static int dequeue() throws Exception {
         if (top < 0) {
             throw new Exception("Cannot dequeue from an empty array");
