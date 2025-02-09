@@ -3,7 +3,7 @@ package com.introtoproblemsolving;
 public class SumOfDigitsOfANumber {
 
     public static void main(String[] args) {
-      System.out.println("SUM OF DIGITS OF THE NUMBER "+ sumOfDigits(221));
+        System.out.println("SUM OF DIGITS OF THE NUMBER "+ sumOfDigits(221));
         System.out.println("SUM OF DIGITS OF THE NUMBER "+ sumOfDigits(2678));
     }
 
