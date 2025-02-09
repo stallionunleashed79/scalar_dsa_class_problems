@@ -1,2 +1,4 @@
-package com.recursion;public class FindLastNonZeroDigitInAFactorial {
+package com.recursion;
+
+public class FindLastNonZeroDigitInAFactorial {
 }

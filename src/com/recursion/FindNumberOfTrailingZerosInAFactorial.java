@@ -1,2 +1,4 @@
-package com.recursion;public class FindNumberOfTrailingZerosInAFactorial {
+package com.recursion;
+
+public class FindNumberOfTrailingZerosInAFactorial {
 }
