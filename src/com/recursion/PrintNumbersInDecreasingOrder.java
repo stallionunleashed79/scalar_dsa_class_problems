@@ -11,7 +11,6 @@ public class PrintNumbersInDecreasingOrder {
             return;
         }
         System.out.print(n +" ");
-        n--;
-        printDecreasing(n);
+        printDecreasing(n-1);
     }
 }
