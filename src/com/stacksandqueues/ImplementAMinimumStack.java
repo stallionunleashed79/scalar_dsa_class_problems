@@ -18,14 +18,12 @@ import java.util.List;
 public class ImplementAMinimumStack {
     final List<Integer> input = new ArrayList<Integer>();
     final List<Integer> minimums = new ArrayList<Integer>();
-    int currentMin = Integer.MAX_VALUE;
 
     public void push(Integer x) {
-        if (x <= currentMin) {
-            currentMin = x;
-            minimums.add(currentMin);
-        }
         input.add(x);
+        if (minimums.isEmpty() || x <= minimums.get(minimums.size() - 1)) {
+            minimums.add(x);
+        }
     }
 
     public void pop() {
