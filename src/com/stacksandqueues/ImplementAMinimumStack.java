@@ -15,6 +15,10 @@ import java.util.List;
  * pop() should return nothing if the stack is empty.
  * top() should return -1 if the stack is empty.
  */
+
+/**
+ * TC = O(1) for all operations and SC = O(N) for the extra minimum stack
+ */
 public class ImplementAMinimumStack {
     final List<Integer> input = new ArrayList<Integer>();
     final List<Integer> minimums = new ArrayList<Integer>();
