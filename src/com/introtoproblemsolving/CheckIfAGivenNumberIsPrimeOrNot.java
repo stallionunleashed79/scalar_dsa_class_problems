@@ -29,4 +29,8 @@ public class CheckIfAGivenNumberIsPrimeOrNot {
         }
         return numberOfFactors == 2;
     }
+
+    private int findLargestPrimeFactorOfANumber(final int N) {
+        return 0;
+    }
 }

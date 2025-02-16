@@ -15,8 +15,8 @@ public class FindUniqueElementInArray {
 
     // TC = O(N) due to iterating the for loop N times and SC = O(1) due to no extra space
     private static int findUniqueElement(int[] input) {
-        int answer = 0;
-        for (int i = 0; i < input.length; i++) {
+        int answer = input[0];
+        for (int i = 1; i < input.length; i++) {
             answer = answer  ^ input[i];
         }
         return answer;
