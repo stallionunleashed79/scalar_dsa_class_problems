@@ -22,6 +22,10 @@ public class FindFirstMissingNaturalNumber {
             Integer current = input.get(i);
             while (current!= i+1 && current.compareTo(0) > 0 && current.compareTo(input.size()) <= 0) {
                 Integer next = input.get(current - 1);
+                /**
+                 * HANDLE THE CASE WITH DUPLICATES SINCE IF THE CURRENT ELEMENT AND THE ELEMENT IT IS GETTING
+                 * SWAPPED WITH ARE EQUAL THEN DO NOT SWAP AND BREAK FROM THE LOOP AND MOVE ON TO THE NEXT ELEMENT
+                 */
                 if (current.compareTo(next) == 0) {
                     break;
                 }
