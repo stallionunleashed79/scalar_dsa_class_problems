@@ -13,6 +13,14 @@ public class CalculateHeightOfABinaryTree {
         System.out.println("HEIGHT OF TREE "+ height(root));
     }
 
+    /**
+     * Time complexity of a binary tree is O(N) since we have to travel all nodes of the tree and space complexity
+     * is also O(N) since the size of the call stack is O(N) as we have to compute height of all nodes of the tree
+     * during its traversal
+     * NOTE: WE USE THE POST-ORDER TRAVERSAL TO FIND THE HEIGHT OF A TREE
+     * @param root
+     * @return
+     */
     private static int height(final TreeNode root) {
         if (root == null) {
             return 0;
