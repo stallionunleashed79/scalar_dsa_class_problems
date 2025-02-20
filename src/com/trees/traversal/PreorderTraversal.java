@@ -1,8 +1,8 @@
-package com.trees.traversal.preorder;
+package com.trees.traversal;
 
 import com.trees.TreeNode;
 
-public class PostOrderTraversal {
+public class PreorderTraversal {
 
     public static void main(String[] args) {
         final TreeNode leaf1 = new TreeNode(3, null, null);
@@ -12,15 +12,15 @@ public class PostOrderTraversal {
         final TreeNode leftNode = new TreeNode(5, leaf1, leaf2);
         final TreeNode rightNode = new TreeNode(6, leaf3, leaf4);
         final TreeNode root = new TreeNode(1, leftNode, rightNode);
-        performPostorderTraversal(root);
+        performPreorderTraversal(root);
     }
 
-    private static void performPostorderTraversal(final TreeNode root) {
+    private static void performPreorderTraversal(final TreeNode root) {
         if (root == null) {
             return;
         }
-        performPostorderTraversal(root.getLeft());
-        performPostorderTraversal(root.getRight());
         System.out.print(root.getData() +" ");
+        performPreorderTraversal(root.getLeft());
+        performPreorderTraversal(root.getRight());
     }
 }

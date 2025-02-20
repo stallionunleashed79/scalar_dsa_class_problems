@@ -1,8 +1,6 @@
-package com.trees.traversal.preorder;
+package com.trees;
 
-import com.trees.TreeNode;
-
-public class InOrderTraversal {
+public class CalculateHeightOfABinaryTree {
 
     public static void main(String[] args) {
         final TreeNode leaf1 = new TreeNode(3, null, null);
@@ -12,15 +10,13 @@ public class InOrderTraversal {
         final TreeNode leftNode = new TreeNode(5, leaf1, leaf2);
         final TreeNode rightNode = new TreeNode(6, leaf3, leaf4);
         final TreeNode root = new TreeNode(1, leftNode, rightNode);
-        performInorderTraversal(root);
+        System.out.println("HEIGHT OF TREE "+ height(root));
     }
 
-    private static void performInorderTraversal(final TreeNode root) {
+    private static int height(final TreeNode root) {
         if (root == null) {
-            return;
+            return 0;
         }
-        performInorderTraversal(root.getLeft());
-        System.out.print(root.getData() +" ");
-        performInorderTraversal(root.getRight());
+        return Math.max(height(root.getLeft()), height(root.getRight())) + 1;
     }
 }
