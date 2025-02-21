@@ -19,6 +19,7 @@ public class SearchForAValueInABinaryTree {
         System.out.println("DOES NUMBER EXIST "+ searchValue(root, 7));
         System.out.println("DOES NUMBER EXIST "+ searchValue(root, 8));
         System.out.println("DOES NUMBER EXIST "+ searchValue(root, 13));
+        System.out.println("DOES NUMBER EXIST "+ searchValue(root, -1));
     }
 
     private static boolean searchValue(final TreeNode root, final int K) {
