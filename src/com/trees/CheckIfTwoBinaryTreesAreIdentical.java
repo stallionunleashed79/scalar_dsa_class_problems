@@ -1,8 +1,5 @@
 package com.trees;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CheckIfTwoBinaryTreesAreIdentical {
 
     public static void main(String[] args) {
@@ -30,24 +27,15 @@ public class CheckIfTwoBinaryTreesAreIdentical {
     }
 
     private static boolean areIdenticalTrees(final TreeNode root1, final TreeNode root2) {
-        final List<TreeNode> firstPreOrderTraversal = new ArrayList<>();
-        final List<TreeNode> secondPreOrderTraversal = new ArrayList<>();
-        performPreOrderTraversal(root1, firstPreOrderTraversal);
-        performPreOrderTraversal(root2, secondPreOrderTraversal);
-        for (int i = 0; i < firstPreOrderTraversal.size(); i++) {
-            if (secondPreOrderTraversal.get(i).getData() != firstPreOrderTraversal.get(i).getData()) {
-                return false;
-            }
+        if (root1 == null && root2 == null) {
+            return true;
         }
-        return true;
-    }
-
-    private static void performPreOrderTraversal(final TreeNode root, final List<TreeNode> result) {
-        if (root == null) {
-            return;
+        if (root1 == null || root2 == null || root1.getData() != root2.getData()) {
+            return false;
         }
-        result.add(root);
-        performPreOrderTraversal(root.getLeft(), result);
-        performPreOrderTraversal(root.getRight(), result);
+        if (!areIdenticalTrees(root1.getLeft(), root2.getLeft())) {
+            return false;
+        }
+        return areIdenticalTrees(root1.getRight(), root2.getRight());
     }
 }
