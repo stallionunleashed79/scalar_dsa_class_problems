@@ -1,5 +1,8 @@
 package com.trees;
 
+/**
+ * GIVEN 2 BINARY TREES OF NODES N AND M, CHECK IF THE 2 BINARY TREES ARE IDENTICAL
+ */
 public class CheckIfTwoBinaryTreesAreIdentical {
 
     public static void main(String[] args) {
@@ -26,6 +29,12 @@ public class CheckIfTwoBinaryTreesAreIdentical {
         System.out.println("ARE BINARY TREES IDENTICAL "+ areIdenticalTrees(rootFirst, rootThird));
     }
 
+    /**
+     * TC = O(Min(N,M)) WHERE N AND M ARE THE NUMBER OF NODES IN THE 2 BINARY TREES
+     * @param root1
+     * @param root2
+     * @return
+     */
     private static boolean areIdenticalTrees(final TreeNode root1, final TreeNode root2) {
         if (root1 == null && root2 == null) {
             return true;
